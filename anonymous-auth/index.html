@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Firebase Messaging</title>
+
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            font-family: Helvetica, 'PingFang SC', 'Microsoft YaHei';
+            color: #333;
+        }
+        main {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            flex-direction: column;
+        }
+        input[type=button] {
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 20px;
+            outline: none;
+            color: #fff;
+            border: none;
+            background: dodgerblue;
+        }
+        input[type=button]:active {
+            background: deepskyblue;
+        }
+        .user {
+            width: 100%;
+        }
+        pre {
+            background: #eef;
+            padding: 40px;
+            border-radius: 5px;
+            max-width: 80%;
+            overflow-x: auto;
+            margin: 20px auto;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <input type="button" id="login" value="Login Anonymously">
+    <input type="button" id="logout" value="Logout" class="hidden">
+    <section class="user"><pre></pre></section>
+</main>
+
+<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-auth.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
