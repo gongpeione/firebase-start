@@ -12,6 +12,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
+const elToken = document.querySelector('#token');
 const messaging = firebase.messaging();
 messaging.requestPermission()
 	.then(() => {
@@ -20,6 +21,7 @@ messaging.requestPermission()
 	})
 	.then(token => {
 		console.log(token);
+		elToken.value = token;
 	})
 	.catch(err => {
 		alert('Permission is required')
@@ -27,7 +29,7 @@ messaging.requestPermission()
 
 messaging.onMessage(payload => {
 	console.log(payload);
-	document.querySelector('main').innerHTML = `<pre>${JSON.stringify(payload, null, '\t')}</pre>`;
+	document.querySelector('.message').innerHTML = `<pre>${JSON.stringify(payload, null, '\t')}</pre>`;
 });
 
 // cURL
